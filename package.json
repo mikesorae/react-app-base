@@ -14,8 +14,10 @@
     "eslint-utils": "1.4.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
+    "redux": "^4.0.4",
     "typescript": "3.6.2"
   },
   "scripts": {
@@ -42,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-redux": "^7.1.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.17.0",

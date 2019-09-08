@@ -21,6 +21,13 @@ module.exports = {
     ],
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
+    "no-unused-vars": [
+      "error", {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+      }
+    ],
   },
   settings: {
     "import/resolver": {
