@@ -1,28 +1,39 @@
 import React from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
+const Nav = () => (
+  <ul>
+    <li>
+      <Link to="/">Go to Home</Link>
+    </li>
+    <li>
+      <Link to="/sub">Go to Sub</Link>
+    </li>
+  </ul>
+);
+const Home = () => (
+  <>
+    <p>Hello React App</p>
+    <Nav />
+  </>
+);
+
+const Sub = () => (
+  <>
+    <p>Here is Sub Page</p>
+    <Nav />
+  </>
+);
+
 const App: React.FC = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-          Edit
-        {' '}
-        <code>src/App.tsx</code>
-        {' '}
-and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-          Learn React
-      </a>
-    </header>
-  </div>
+  <BrowserRouter>
+    <div>
+      <Route exact path="/" component={Home} />
+      <Route path="/sub" component={Sub} />
+    </div>
+  </BrowserRouter>
 );
 
 export default App;
