@@ -19,6 +19,8 @@ module.exports = {
         "extensions": [".jsx", ".tsx"] 
       },
     ],
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error",
   },
   settings: {
     "import/resolver": {
