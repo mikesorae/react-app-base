@@ -7,15 +7,15 @@ export interface ToDoState {
 
 const initialState = {
   title: '',
-}
+};
 
 export const ToDoModule = createSlice({
   slice: 'todos',
-  initialState: initialState,
+  initialState,
   reducers: {
     updateTitle: (state: ToDoState, action: PayloadAction<string>) => {
       const title = action.payload;
-      state.title = title;
-    }
-  }
-})
+      return { ...state, title };
+    },
+  },
+});

@@ -21,7 +21,8 @@ module.exports = {
     ],
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
-    "no-unused-vars": [
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
       "error", {
         "args": "after-used",
         "argsIgnorePattern": "^_",
