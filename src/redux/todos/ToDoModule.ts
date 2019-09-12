@@ -1,21 +1,21 @@
 import { createSlice, PayloadAction } from 'redux-starter-kit';
 
-export interface ToDoState {
+export interface ToDo {
   id?: number;
   title: string;
 }
 
-const initialState = {
-  title: '',
+const initialState: { todos: ToDo[] } = {
+  todos: [],
 };
 
 export const ToDoModule = createSlice({
   slice: 'todos',
   initialState,
   reducers: {
-    updateTitle: (state: ToDoState, action: PayloadAction<string>) => {
-      const title = action.payload;
-      return { ...state, title };
+    addTodo: ({ todos }: { todos: ToDo[] }, action: PayloadAction<ToDo>) => {
+      const todo = action.payload;
+      return { todos: [...todos, todo] };
     },
   },
 });
