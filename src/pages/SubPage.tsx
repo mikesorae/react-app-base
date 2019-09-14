@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { mainLayout } from '../layouts/MainLayout';
+import { Button } from '@material-ui/core';
 
 const Content = () => {
   const [count, setCount] = useState(0);
@@ -12,8 +13,8 @@ const Content = () => {
       <p>Sub Page</p>
       <p>{ count }</p>
       <div>
-        <button type="button" onClick={increment}>+</button>
-        <button type="button" onClick={decrement}>-</button>
+        <Button type="button" onClick={increment}>+</Button>
+        <Button type="button" onClick={decrement}>-</Button>
       </div>
     </>
   );
