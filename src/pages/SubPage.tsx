@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { mainLayout } from '../layouts/MainLayout';
 import { Button } from '@material-ui/core';
+import { mainLayout } from '../layouts/MainLayout';
 
 const Content = () => {
   const [count, setCount] = useState(0);
