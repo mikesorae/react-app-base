@@ -17,23 +17,32 @@ const Content = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [userId, setUserId] = useState('');
-  const [_, setPassword] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState<string[]>([]);
   const sleep = (msec: number) => new Promise((resolve) => setTimeout(resolve, msec));
 
   const fakeLogin = async () => {
     setLoading(true);
     console.log('current session: ', session);
     console.log('call auth api');
-    await sleep(2000);
+    await sleep(1000); // dummy wait
+
+    // dummy login check
+    if (userId === 'test' && password === 'password') {
+      const newSession: Session = {
+        principal: {
+          id: userId,
+          name: 'john do',
+        },
+        token: 'xxxxxxxxxx',
+      };
+      setErrors([]);
+      dispatch(SessionModule.actions.updateSession(newSession));
+    } else {
+      setErrors(['incorrect user id or password']);
+    }
+
     console.log('finish login');
-    const newSession: Session = {
-      principal: {
-        id: userId,
-        name: 'john do',
-      },
-      token: 'xxxxxxxxxx',
-    };
-    dispatch(SessionModule.actions.updateSession(newSession));
     setLoading(false);
   };
 
@@ -58,10 +67,12 @@ const Content = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Box>
+          {errors.length > 0 && <Box p={2}>{errors.map((e) => <p>{e}</p>)}</Box>}
           <Box p={2}>
             <Button
               type="submit"
               onClick={() => fakeLogin()}
+              variant="outlined"
               disabled={loading}
             >
               ログインする
