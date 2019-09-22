@@ -16,7 +16,7 @@ export const App: React.FC = () => (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={TopPage} />
-        <Route exact path="/login" component={LoginPage} />
+        <Route path="/login" component={LoginPage} />
         <Route path="/sub" component={SubPage} />
         <Auth>
           <Route path="/todos" component={ToDoListPage} />
