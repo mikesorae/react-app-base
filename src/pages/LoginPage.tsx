@@ -82,8 +82,8 @@ const Content = () => {
                 disabled={loading}
               >
                 ログインする
+                {loading && <CircularProgress size={24} />}
               </Button>
-              {loading && <CircularProgress size={24} />}
             </Box>
           </Box>
         </form>
