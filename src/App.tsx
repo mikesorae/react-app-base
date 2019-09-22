@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { store } from './redux/Store';
 import './App.css';
 import {
@@ -9,16 +9,19 @@ import {
   ToDoListPage,
   LoginPage,
 } from './pages';
+import { Auth } from './components/Auth';
 
 export const App: React.FC = () => (
   <Provider store={store}>
     <BrowserRouter>
-      <div>
+      <Switch>
         <Route exact path="/" component={TopPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route path="/sub" component={SubPage} />
-        <Route path="/todos" component={ToDoListPage} />
-      </div>
+        <Auth>
+          <Route path="/todos" component={ToDoListPage} />
+        </Auth>
+      </Switch>
     </BrowserRouter>
   </Provider>
 );

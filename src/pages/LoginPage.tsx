@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 import { SessionModule } from '../redux/session/SessionModule';
 import { Session } from '../models/auth/Session';
-import { useSession } from '../redux/session/Selector';
+import { useSession } from '../redux/Selector';
 
 const Content = () => {
   const { history } = useReactRouter();

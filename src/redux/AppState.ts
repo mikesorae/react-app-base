@@ -1,5 +1,5 @@
-import { Session } from "../models/auth/Session";
-import { ToDo } from "./todos/ToDoModule";
+import { Session } from '../models/auth/Session';
+import { ToDo } from './todos/ToDoModule';
 
 export interface AppState {
   session: Session,

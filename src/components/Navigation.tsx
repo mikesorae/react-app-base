@@ -9,5 +9,8 @@ export const Navigation = () => (
     <li>
       <Link to="/sub">Go to Sub</Link>
     </li>
+    <li>
+      <Link to="/todos">Go to TODO</Link>
+    </li>
   </ul>
 );
